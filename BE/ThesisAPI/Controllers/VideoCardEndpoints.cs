@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ThesisAPI.Converters;
 using ThesisAPI.DTOs;
 using ThesisAPI.Models;
@@ -9,9 +10,16 @@ public static class VideoCardEndpoints
     public static void MapVideoCardEndpoints (this IEndpointRouteBuilder routes)
     {
         // GET All
-        routes.MapGet("/api/VideoCard", async (ThesisContext db) =>
+        routes.MapGet("/api/VideoCard", async ([FromQuery] int? page, [FromQuery] int? pageSize, ThesisContext db) =>
         {
-            return (await db.VideoCards.ToListAsync()).ToDto();
+            page ??= 1;
+            pageSize ??= 10;
+
+            var skip = (page.Value - 1) * pageSize.Value;
+
+            var entities = await db.VideoCards.Skip(skip).Take(pageSize.Value).ToListAsync();
+
+            return (entities.ToDto());
         })
         .WithName("GetAllVideoCards")
         .Produces<List<VideoCard>>(StatusCodes.Status200OK);
