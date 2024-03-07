@@ -1,0 +1,77 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "ThesisContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "ThesisAPI",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Computer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ComputerUsb]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Disk]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[DiskType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Memory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PowerSupply]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Processor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UsbType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[VideoCard]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[WeightUnit]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-21RTAV3\\SQLEXPRESS.Thesis",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
