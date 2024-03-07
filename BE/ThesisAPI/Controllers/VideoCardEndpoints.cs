@@ -17,28 +17,30 @@ public static class VideoCardEndpoints
         .Produces<List<VideoCard>>(StatusCodes.Status200OK);
 
         // GET Single
-        routes.MapGet("/api/VideoCard/{id}", async (int VideoCardId, ThesisContext db) =>
+        routes.MapGet("/api/VideoCard/{id}", async (int id, ThesisContext db) =>
         {
-            return await db.VideoCards.FindAsync(VideoCardId)
+            return await db.VideoCards.FindAsync(id)
                 is VideoCardEntity model
-                    ? Results.Ok(model)
+                    ? Results.Ok(model.ToDto())
                     : Results.NotFound();
         })
         .WithName("GetVideoCardById")
-        .Produces<VideoCardEntity>(StatusCodes.Status200OK)
+        .Produces<VideoCard>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
         // PUT
-        routes.MapPut("/api/VideoCard/{id}", async (int VideoCardId, VideoCardEntity videoCard, ThesisContext db) =>
+        routes.MapPut("/api/VideoCard/{id}", async (int id, VideoCard videoCard, ThesisContext db) =>
         {
-            var foundModel = await db.VideoCards.FindAsync(VideoCardId);
+            var videoCardEntity = await db.VideoCards.FindAsync(id);
 
-            if (foundModel is null)
+            if (videoCardEntity is null)
             {
                 return Results.NotFound();
             }
 
-            db.Update(videoCard);
+            videoCardEntity.VideoCardDesc = videoCard.VideoCardDesc;
+
+            db.Update(videoCardEntity);
 
             await db.SaveChangesAsync();
 
@@ -49,29 +51,30 @@ public static class VideoCardEndpoints
         .Produces(StatusCodes.Status204NoContent);
 
         // POST
-        routes.MapPost("/api/VideoCard/", async (VideoCardEntity videoCard, ThesisContext db) =>
+        routes.MapPost("/api/VideoCard/", async (VideoCard videoCard, ThesisContext db) =>
         {
-            db.VideoCards.Add(videoCard);
+            var entity = videoCard.ToEntity();
+            db.VideoCards.Add(entity);
             await db.SaveChangesAsync();
-            return Results.Created($"/VideoCards/{videoCard.VideoCardId}", videoCard);
+            return Results.Created($"/VideoCards/{videoCard.VideoCardId}", entity.ToDto());
         })
         .WithName("CreateVideoCard")
-        .Produces<VideoCardEntity>(StatusCodes.Status201Created);
+        .Produces<VideoCard>(StatusCodes.Status201Created);
 
         // DELETE
-        routes.MapDelete("/api/VideoCard/{id}", async (int VideoCardId, ThesisContext db) =>
+        routes.MapDelete("/api/VideoCard/{id}", async (int id, ThesisContext db) =>
         {
-            if (await db.VideoCards.FindAsync(VideoCardId) is VideoCardEntity videoCard)
+            if (await db.VideoCards.FindAsync(id) is VideoCardEntity videoCard)
             {
                 db.VideoCards.Remove(videoCard);
                 await db.SaveChangesAsync();
-                return Results.Ok(videoCard);
+                return Results.NoContent();
             }
 
             return Results.NotFound();
         })
         .WithName("DeleteVideoCard")
-        .Produces<VideoCardEntity>(StatusCodes.Status200OK)
+        .Produces<VideoCardEntity>(StatusCodes.Status204NoContent)
         .Produces(StatusCodes.Status404NotFound);
     }
 }
