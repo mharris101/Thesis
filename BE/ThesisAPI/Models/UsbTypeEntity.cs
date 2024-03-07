@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ThesisAPI.Models
 {
@@ -11,6 +12,7 @@ namespace ThesisAPI.Models
             ComputerUsbs = new HashSet<ComputerUsbEntity>();
         }
 
+        [Key]
         public int UsbTypeId { get; set; }
         public string UsbTypeDesc { get; set; }
 

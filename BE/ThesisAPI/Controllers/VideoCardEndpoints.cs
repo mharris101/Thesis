@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ThesisAPI.Converters;
+using ThesisAPI.DTOs;
 using ThesisAPI.Models;
 namespace ThesisAPI.Controllers;
 
@@ -6,13 +8,15 @@ public static class VideoCardEndpoints
 {
     public static void MapVideoCardEndpoints (this IEndpointRouteBuilder routes)
     {
+        // GET All
         routes.MapGet("/api/VideoCard", async (ThesisContext db) =>
         {
-            return await db.VideoCards.ToListAsync();
+            return (await db.VideoCards.ToListAsync()).ToDto();
         })
         .WithName("GetAllVideoCards")
-        .Produces<List<VideoCardEntity>>(StatusCodes.Status200OK);
+        .Produces<List<VideoCard>>(StatusCodes.Status200OK);
 
+        // GET Single
         routes.MapGet("/api/VideoCard/{id}", async (int VideoCardId, ThesisContext db) =>
         {
             return await db.VideoCards.FindAsync(VideoCardId)
@@ -24,6 +28,7 @@ public static class VideoCardEndpoints
         .Produces<VideoCardEntity>(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound);
 
+        // PUT
         routes.MapPut("/api/VideoCard/{id}", async (int VideoCardId, VideoCardEntity videoCard, ThesisContext db) =>
         {
             var foundModel = await db.VideoCards.FindAsync(VideoCardId);
@@ -43,6 +48,7 @@ public static class VideoCardEndpoints
         .Produces(StatusCodes.Status404NotFound)
         .Produces(StatusCodes.Status204NoContent);
 
+        // POST
         routes.MapPost("/api/VideoCard/", async (VideoCardEntity videoCard, ThesisContext db) =>
         {
             db.VideoCards.Add(videoCard);
@@ -52,6 +58,7 @@ public static class VideoCardEndpoints
         .WithName("CreateVideoCard")
         .Produces<VideoCardEntity>(StatusCodes.Status201Created);
 
+        // DELETE
         routes.MapDelete("/api/VideoCard/{id}", async (int VideoCardId, ThesisContext db) =>
         {
             if (await db.VideoCards.FindAsync(VideoCardId) is VideoCardEntity videoCard)

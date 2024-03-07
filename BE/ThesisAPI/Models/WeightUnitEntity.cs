@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ThesisAPI.Models
 {
@@ -11,6 +12,7 @@ namespace ThesisAPI.Models
             Computers = new HashSet<ComputerEntity>();
         }
 
+        [Key]
         public int WeightUnitId { get; set; }
         public string WeightUnitDesc { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿#nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ThesisAPI.Models
 {
@@ -11,6 +12,7 @@ namespace ThesisAPI.Models
             Disks = new HashSet<DiskEntity>();
         }
 
+        [Key]
         public int DiskTypeId { get; set; }
         public string DiskTypeDesc { get; set; }
 
