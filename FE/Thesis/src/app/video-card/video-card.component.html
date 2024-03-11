@@ -1,0 +1,17 @@
+<h2>Video Cards</h2>
+<div>
+  <label for="new-video-card">Video Card: </label>
+  <input id="new-video-card" #videoCard />
+
+  <button type="button" class="add-button" (click)="add(videoCard.value); videoCard.value=''">
+    Add Video Card
+  </button>
+</div>
+<ul class="components">
+  <li *ngFor="let vc of videoCards">
+    <a routerLink="/videocards/{{vc.videoCardId}}">
+      <span class="badge">{{vc.videoCardId}}</span> {{vc.videoCardDesc}}
+    </a>
+    <button type="button" class="delete" title="delete hero" (click)="delete(vc.videoCardId)">x</button>
+  </li>
+</ul>
