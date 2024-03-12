@@ -2,6 +2,56 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "FluentValidation/11.5.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.3.0": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.5.1",
+          "FluentValidation.DependencyInjectionExtensions": "11.5.1"
+        },
+        "compile": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.5.1": {
+        "type": "package",
+        "dependencies": {
+          "FluentValidation": "11.5.1",
+          "Microsoft.Extensions.Dependencyinjection.Abstractions": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -633,6 +683,41 @@
       },
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
+      },
+      "Microsoft.AspNet.WebApi.Client/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "Newtonsoft.Json.Bson": "1.0.2",
+          "System.Memory": "4.5.5",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "6.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {
+            "related": ".xml"
+          }
+        }
       },
       "Microsoft.AspNetCore.Razor.Language/6.0.0": {
         "type": "package",
@@ -1962,6 +2047,22 @@
           }
         }
       },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "NuGet.Common/6.6.1": {
         "type": "package",
         "dependencies": {
@@ -2253,6 +2354,22 @@
         },
         "build": {
           "build/Swashbuckle.AspNetCore.props": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.Annotations/6.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0"
+        },
+        "compile": {
+          "lib/net6.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Swashbuckle.AspNetCore.Annotations.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore.Swagger/6.5.0": {
@@ -3835,6 +3952,65 @@
     }
   },
   "libraries": {
+    "FluentValidation/11.5.1": {
+      "sha512": "0h1Q5lNOLLyYTWMJmyNoMqhY4CBRvvUWvJP1R4F2CnmmzuWwvB0A8aVmw5+lOuwYnwUwCRrdeMLbc81F38ahNQ==",
+      "type": "package",
+      "path": "fluentvalidation/11.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.5.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/net7.0/FluentValidation.dll",
+        "lib/net7.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
+    "FluentValidation.AspNetCore/11.3.0": {
+      "sha512": "jtFVgKnDFySyBlPS8bZbTKEEwJZnn11rXXJ2SQnjDhZ56rQqybBg9Joq4crRLz3y0QR8WoOq4iE4piV81w/Djg==",
+      "type": "package",
+      "path": "fluentvalidation.aspnetcore/11.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+        "fluentvalidation.aspnetcore.nuspec",
+        "lib/net5.0/FluentValidation.AspNetCore.dll",
+        "lib/net5.0/FluentValidation.AspNetCore.xml",
+        "lib/net6.0/FluentValidation.AspNetCore.dll",
+        "lib/net6.0/FluentValidation.AspNetCore.xml",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll",
+        "lib/netcoreapp3.1/FluentValidation.AspNetCore.xml"
+      ]
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.5.1": {
+      "sha512": "iWM0LS1MDYX06pcjMEQKqHirl2zkjHlNV23mEJSoR1IZI7KQmTa0RcTtGEJpj5+iHvBCfrzP2mYKM4FtRKVb+A==",
+      "type": "package",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
+        "fluentvalidation.dependencyinjectionextensions.nuspec",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.0/FluentValidation.DependencyInjectionExtensions.xml",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll",
+        "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.xml"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -4625,6 +4801,41 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/6.0.0": {
+      "sha512": "zXeWP03dTo67AoDHUzR+/urck0KFssdCKOC+dq7Nv1V2YbFh/nIg09L0/3wSvyRONEdwxGB/ssEGmPNIIhAcAw==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard1.3/System.Net.Http.Formatting.dll",
+        "lib/netstandard1.3/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Core/5.3.0": {
+      "sha512": "h0oLsUFPgoB1R+6ichy1bniAs4oC6w6XrPsEgn+LuQBxBGskN0djSOSX7hzL8LTFEZUTdsh/3ShjRu1Mb2QRfw==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.core/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/web.config.transform",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Http.dll",
+        "lib/net45/System.Web.Http.xml",
+        "microsoft.aspnet.webapi.core.5.3.0.nupkg.sha512",
+        "microsoft.aspnet.webapi.core.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.0": {
@@ -6879,6 +7090,27 @@
         "packageIcon.png"
       ]
     },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "sha512": "QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.pdb",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.2.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
+      ]
+    },
     "NuGet.Common/6.6.1": {
       "sha512": "hW5NtShErO3qbdkyv7doCRsFNK9Rlcc7mVjYM+hg1sOAWheTh/oo95DzNbsZthiqyHZfaioopfWtzmoxNw9h4g==",
       "type": "package",
@@ -7252,6 +7484,32 @@
         "build/Swashbuckle.AspNetCore.props",
         "swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.Annotations/6.5.0": {
+      "sha512": "EcHd1z2pEdnpaBMTI9qjVxk6mFVGVMZ1n0ySC3fjrkXCQQ8O9fMdt9TxPJRKyjiTiTjvO9700jKjmyl+hPBinQ==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.annotations/6.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net5.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net5.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/net6.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net6.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net6.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/net7.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/net7.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/net7.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/netcoreapp3.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.pdb",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.Annotations.xml",
+        "swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
+        "swashbuckle.aspnetcore.annotations.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore.Swagger/6.5.0": {
@@ -11135,13 +11393,16 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FluentValidation.AspNetCore >= 11.3.0",
+      "Microsoft.AspNet.WebApi.Core >= 5.3.0",
       "Microsoft.EntityFrameworkCore >= 6.0.27",
       "Microsoft.EntityFrameworkCore.InMemory >= 6.0.27",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.27",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.27",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.27",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.16",
-      "Swashbuckle.AspNetCore >= 6.5.0"
+      "Swashbuckle.AspNetCore >= 6.5.0",
+      "Swashbuckle.AspNetCore.Annotations >= 6.5.0"
     ]
   },
   "packageFolders": {
@@ -11183,6 +11444,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[11.3.0, )"
+          },
+          "Microsoft.AspNet.WebApi.Core": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.27, )"
@@ -11212,6 +11481,10 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.5.0, )"
+          },
+          "Swashbuckle.AspNetCore.Annotations": {
+            "target": "Package",
+            "version": "[6.5.0, )"
           }
         },
         "imports": [
@@ -11236,5 +11509,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

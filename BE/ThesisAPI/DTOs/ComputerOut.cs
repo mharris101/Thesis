@@ -1,7 +1,7 @@
 ﻿#nullable disable
 namespace ThesisAPI.DTOs
 {
-    public class Computer
+    public class ComputerOut
     {
         public int ComputerId { get; set; }
         public string Disk { get; set; }

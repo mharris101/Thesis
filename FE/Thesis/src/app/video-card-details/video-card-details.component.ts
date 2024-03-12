@@ -30,7 +30,8 @@ export class VideoCardDetailsComponent implements OnInit {
 
   save(): void {
     if (this.videoCard) {
-      this.videoCardService.updateVideoCard(this.videoCard).subscribe(() => this.goBack());
+      this.videoCardService.updateVideoCard(this.videoCard).subscribe(() =>
+        this.goBack())
     }
   }
 

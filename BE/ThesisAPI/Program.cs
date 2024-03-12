@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using ThesisAPI.Models;
-using ThesisAPI.Services;
-using ThesisAPI.Services.Interfaces;
 using ThesisAPI.Controllers;
+using FluentValidation;
+using ThesisAPI.DTOs;
+using ThesisAPI.Validators;
+using ThesisAPI.Services.Interfaces;
+using ThesisAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+// Dependency Injection
+// Validators
+builder.Services.AddScoped<IValidator<VideoCard>, VideoCardValidator>();
+// Services
+builder.Services.AddScoped<IVideoCardService, VideoCardService>();
 builder.Services.AddScoped<IComputerService, ComputerService>();
 
 builder.Services.AddDbContext<ThesisContext>(options =>
@@ -41,7 +49,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MapComputerEndpoints();
-app.MapVideoCardEndpoints();
+//app.MapComputerEndpoints();
+//app.MapVideoCardEndpoints();
 
 app.Run();

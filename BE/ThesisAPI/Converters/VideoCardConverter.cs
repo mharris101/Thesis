@@ -34,5 +34,11 @@ namespace ThesisAPI.Converters
             VideoCardId = dto.VideoCardId,
             VideoCardDesc = dto.VideoCardDesc
         };
+
+        public static void Merge(this VideoCard dto, VideoCardEntity entity)
+        {
+            entity.VideoCardId = dto.VideoCardId;
+            entity.VideoCardDesc = dto.VideoCardDesc;
+        }
     }
 }

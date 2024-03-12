@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Pyi+RrL48ImuBe7s6tujy7dJBBruKaKj9OPjvQCoDDTHPxvSMKX776i57ZaFvRKKKtNt4cXU+zRAM7Ro/3OHFQ==",
+  "dgSpecHash": "G25dyIWhmsaMeEmU3dqkNxQAoGDNz6mofb39jaJSnZvHw1KcVq1N7lXNpFdZZ5xtRwczRIl/t00QR8jp0KQdRw==",
   "success": true,
   "projectFilePath": "C:\\code\\Thesis\\BE\\ThesisAPI\\ThesisAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\joebo\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -57,6 +60,8 @@
     "C:\\Users\\joebo\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.3.0\\microsoft.aspnet.webapi.core.5.3.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\microsoft.build\\17.3.2\\microsoft.build.17.3.2.nupkg.sha512",
@@ -117,6 +122,7 @@
     "C:\\Users\\joebo\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\nuget.common\\6.6.1\\nuget.common.6.6.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\nuget.configuration\\6.6.1\\nuget.configuration.6.6.1.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\nuget.dependencyresolver.core\\6.6.1\\nuget.dependencyresolver.core.6.6.1.nupkg.sha512",
@@ -143,6 +149,7 @@
     "C:\\Users\\joebo\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\joebo\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.5.0\\swashbuckle.aspnetcore.annotations.6.5.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
@@ -227,5 +234,16 @@
     "C:\\Users\\joebo\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\joebo\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

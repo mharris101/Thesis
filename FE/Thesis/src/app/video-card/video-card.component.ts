@@ -32,7 +32,7 @@ export class VideoCardComponent implements OnInit {
     if (!videoCardDesc) { return };
 
     this.videoCardService.addVideoCard({ videoCardDesc } as IVideoCard)
-    .subscribe(() => this.getAll());
+      .subscribe(() => this.getAll());
   }
 
   delete(id: number): void {
