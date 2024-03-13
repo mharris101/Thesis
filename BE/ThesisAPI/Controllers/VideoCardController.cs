@@ -60,9 +60,9 @@ namespace ThesisAPI.Controllers
                 return BadRequest(new { errors });
             }
 
-            var newVideoCard = await _videoCardService.AddAsync(videoCard);
+            await _videoCardService.AddAsync(videoCard);
 
-            return Created($"/VideoCards/{videoCard.VideoCardId}", newVideoCard);
+            return Created($"/VideoCards/{videoCard.VideoCardId}", videoCard);
         }
 
         [HttpPut]

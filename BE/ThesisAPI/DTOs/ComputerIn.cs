@@ -12,6 +12,6 @@ namespace ThesisAPI.DTOs
         public int MemoryId { get; set; }
         public int ProcessorId { get; set; }
 
-        public List<UsbType> UsbTypes { get; set; }
+        public int[] UsbTypeIds { get; set; }
     }
 }

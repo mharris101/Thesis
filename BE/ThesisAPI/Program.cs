@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using ThesisAPI.Models;
-using ThesisAPI.Controllers;
 using FluentValidation;
 using ThesisAPI.DTOs;
 using ThesisAPI.Validators;
@@ -48,8 +47,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
-//app.MapComputerEndpoints();
-//app.MapVideoCardEndpoints();
 
 app.Run();

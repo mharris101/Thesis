@@ -4,9 +4,6 @@ import { AgGridAngular } from 'ag-grid-angular';
 import {
   ColDef,
   GridReadyEvent,
-  ICellRendererParams,
-  IDatasource,
-  IGetRowsParams,
   RowModelType,
 } from 'ag-grid-community';
 import 'ag-grid-community/styles/ag-grid.css';
@@ -19,28 +16,6 @@ import { ComputerService } from '../services/computer.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  // template: `
-  //   <div class="content">
-  //     <!-- The AG Grid component, with Dimensions, CSS Theme, Row Data, and Column Definition -->
-  //     <ag-grid-angular
-  //       style="height: 500px;"
-  //       [columnDefs]="videoCardColDefs"
-  //       [defaultColDef]="defaultColDef"
-  //       [rowBuffer]="rowBuffer"
-  //       [rowSelection]="rowSelection"
-  //       [rowModelType]="rowModelType"
-  //       [cacheBlockSize]="cacheBlockSize"
-  //       [cacheOverflowSize]="cacheOverflowSize"
-  //       [maxConcurrentDatasourceRequests]="maxConcurrentDatasourceRequests"
-  //       [infiniteInitialRowCount]="infiniteInitialRowCount"
-  //       [maxBlocksInCache]="maxBlocksInCache"
-  //       [rowData]="rowData"
-  //       [class]="themeClass"
-  //       (gridReady)="onGridReady($event)"
-  //       >
-  //     </ag-grid-angular>
-  //   </div>
-  // `,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
@@ -54,10 +29,10 @@ export class HomeComponent {
     { field: "disk", headerName: "Disk", flex: 1 },
     { field: "videoCard", headerName: "Video Card", flex: 3 },
     { field: "weight", headerName: "Weight", flex: 1},
-    { field: "powerSupply", headerName: "Power Supply", flex: 1 },
+    { field: "powerSupply", headerName: "Power Supply", flex: 2 },
     { field: "memory", headerName: "Memory", flex: 1 },
-    { field: "processor", headerName: "Processor", flex: 2 },
-    { field: "usb", headerName: "USB", flex: 3 },
+    { field: "processor", headerName: "Processor", flex: 3 },
+    { field: "usb", headerName: "USB", flex: 4 },
   ];
 
   public defaultColDef: ColDef = {
@@ -80,36 +55,10 @@ export class HomeComponent {
   public themeClass: string = "ag-theme-quartz";
 
   onGridReady(params: GridReadyEvent<IComputer>) {
-
     this.populateGrid();
+  }
 
-
-    // this.computerService.getComputers()
-    //   .subscribe((data) => {
-    //     const dataSource: IDatasource = {
-    //       rowCount: undefined,
-    //       getRows: (params: IGetRowsParams) => {
-    //         console.log(
-    //           'asking for ' + params.startRow + ' to ' + params.endRow
-    //         );
-    //         setTimeout(() => {
-    //           // take a slice of the total rows
-    //           const rowsThisPage = data.slice(params.startRow, params.endRow);
-    //           // if on or after the last page, work out the last row.
-    //           let lastRow = -1;
-    //           if (data.length <= params.endRow) {
-    //             lastRow = data.length;
-    //           }
-    //           // call the success callback
-    //           params.successCallback(rowsThisPage, lastRow);
-    //         }, 500);
-    //       },
-    //     };
-    //     params.api!.setGridOption('datasource', dataSource);
-    //   });
-    }
-
-    populateGrid() {
-      this.computerService.getComputers().subscribe((data) => (this.rowData = data));
-    }
+  populateGrid() {
+    this.computerService.getComputers().subscribe((data) => (this.rowData = data));
+  }
 }

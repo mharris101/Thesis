@@ -7,6 +7,8 @@ namespace ThesisAPI.Services.Interfaces
         /// <summary>
         /// Gets all the video cards
         /// </summary>
+        /// <param name="page">The page of the data to retrieve</param>
+        /// <param name="pageSize">The size of the page</param>
         /// <returns>A collection of video cards</returns>
         Task<IEnumerable<VideoCard>> GetAllAsync(int? page = 1, int? pageSize = 10);
 

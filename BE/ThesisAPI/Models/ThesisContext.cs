@@ -1,8 +1,5 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace ThesisAPI.Models
 {
